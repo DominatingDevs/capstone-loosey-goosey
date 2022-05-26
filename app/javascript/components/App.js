@@ -21,7 +21,7 @@ class App extends Component {
     }
   }
   
-  render () {
+  render() {
     return (
       <Router>
       <Header {...this.props} />
