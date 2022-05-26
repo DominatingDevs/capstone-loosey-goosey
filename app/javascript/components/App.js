@@ -20,25 +20,13 @@ class App extends Component {
       locations: []
     }
   }
+  
   render () {
     return (
       <Router>
       <Header {...this.props} />
       <Switch>
         <Route exact path="/" component={Home} />
-
-        {/* <Route path="/gooseyindex" render={(props) => <GooseyIndex gooseys={this.state.gooseys} />} />
-
-        <Route path="/gooseyshow/:id" render={(props) => {
-        let id = +props.match.params.id
-        let goosey = this.state.goosey.find(goosey => goosey.id === +id)
-        return <GooseyShow deleteGoosey={this.deleteGoosey} goosey={goosey} />
-      }} /> */}
-
-      {/* {logged_in &&
-      <Route path="mygoosey" render= {(props) => { 
-      let mygoosey = this.state.gooseys.find(goosey => goosey.user_id === current_user.id) />
-      }}} /> */}
 
         <Route path="/gooseynew" component={GooseyNew} />
 
