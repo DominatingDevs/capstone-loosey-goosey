@@ -14,3 +14,45 @@
  *= require_self
  */
  @import 'bootstrap';
+
+ /* main show */
+
+
+// .Home{
+// position: relative;
+// width: 360px;
+// height: 800px;
+
+// background: linear-gradient(191.39deg, #000000 102.38%, #6C63FF 102.39%);
+// box-shadow: 40px 40px 100px rgba(0, 0, 0, 0.25);
+// border-radius: 30px;
+// }
+
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: #6C63FF;
+
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color:#000000;
+}
+
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: $primary-color;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}

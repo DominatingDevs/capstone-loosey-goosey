@@ -26,13 +26,7 @@ class App extends Component {
       <Router>
       <Header {...this.props} />
       <Switch>
-        <Route exact path="/" component={Home} />
-
-        <Route path="/gooseynew" component={GooseyNew} />
-
-        <Route path="/gooseyedit" component={GooseyEdit} />
-
-        <Route component={NotFound}/>
+        <Route exact path="/"> <Home /> </Route>
 
       </Switch>
     </Router>
