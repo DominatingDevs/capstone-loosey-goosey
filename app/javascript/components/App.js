@@ -21,18 +21,19 @@ class App extends Component {
     }
   }
   
-  render() {
+  render () {
     return (
       <Router>
       <Header {...this.props} />
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/"> <Home /> </Route>
 
-        <Route path="/gooseynew" component={GooseyNew} />
 
-        <Route path="/gooseyedit" component={GooseyEdit} />
+        {/* <Route path="/gooseynew"> <GooseyNew />  </Route> */}
 
-        <Route component={NotFound}/>
+        {/* <Route path="/gooseyedit" component={GooseyEdit} />
+
+        <Route component={NotFound}/> */}
 
       </Switch>
     </Router>
