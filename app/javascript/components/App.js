@@ -28,13 +28,6 @@ class App extends Component {
       <Switch>
         <Route exact path="/"> <Home /> </Route>
 
-
-        {/* <Route path="/gooseynew"> <GooseyNew />  </Route> */}
-
-        {/* <Route path="/gooseyedit" component={GooseyEdit} />
-
-        <Route component={NotFound}/> */}
-
       </Switch>
     </Router>
     
