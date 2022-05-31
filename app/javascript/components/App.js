@@ -21,7 +21,7 @@ class App extends Component {
       locations: []
     }
   }
-  
+   
   render () {
     return (
       <Router>
