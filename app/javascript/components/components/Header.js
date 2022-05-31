@@ -18,7 +18,7 @@ class Header extends Component {
 
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a className="navbar-brand" href="/"></a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse"         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
@@ -40,20 +40,24 @@ class Header extends Component {
                         <NavItem>
                             <NavLink to="/gooseyindex">All the Gooseys</NavLink>
                         </NavItem>
-                        {logged_in &&
-                            <>
-                                <NavItem>
-                                    <NavLink to="/mygooseys">My Gooseys</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink to="/new">Add Goosey</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <a href={sign_out_route}>Sign Out</a>
-                                </NavItem>
-                            </>
-                        }
+
+                        <>
+                            <NavItem>
+                                <NavLink to="/gooseyshow">My Gooseys</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink to="/gooseynew">Add Goosey</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink to="/aboutus">About Us</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <a href={sign_out_route}>Sign Out</a>
+                            </NavItem>
+                        </>
+
                         {!logged_in &&
+
                             <NavItem>
                                 <a href={sign_in_route}>Sign In</a>
                             </NavItem>

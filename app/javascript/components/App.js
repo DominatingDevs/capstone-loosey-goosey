@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
+import AboutUs from './pages/AboutUs'
 import GooseyIndex from './pages/GooseyIndex'
 import GooseyShow from './pages/GooseyShow'
 import GooseyNew from './pages/GooseyNew'
@@ -26,7 +27,10 @@ class App extends Component {
       <Router>
       <Header {...this.props} />
       <Switch>
+        
         <Route exact path="/"> <Home /> </Route>
+
+        <Route path="/aboutus" component={AboutUs} />
 
       </Switch>
     </Router>
