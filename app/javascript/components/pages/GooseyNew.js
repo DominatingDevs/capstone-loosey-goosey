@@ -12,9 +12,11 @@ export default class GooseyNew extends Component {
             location_category: "",
             happy_hours: "",
             specials: "",
-            location_image: ""
+            location_image: "",
+            user_id: this.props.current_user_id,
           },
-          submitted: false
+          submitted: false, 
+          formIsValid: true
         }
       }
 
@@ -25,15 +27,35 @@ export default class GooseyNew extends Component {
       }
 
       handleSubmit = (e) => {
-        //   e.preventDefault()
-          this.props.createNewListing(this.state.form)
-          this.setState ({submitted: true})
+          console.log("***",this.props.newListing)
+          console.log("$$$",this.state.newListing)
+          fetch("/listings", {
+            body: JSON.stringify(this.state.newListing),
+            headers: {
+              "Content-Type": "application/json"
+            },
+            method: "POST"
+          })
+          .then(response => {
+            if(response.status === 200){
+              this.setState ({submitted: true})
+            } else if(response.status === 422)  {
+              this.setState ({formIsValid: false}) 
+            }
+            return response
+          })
+          .catch(errors => {
+            console.log("create errors:", errors)
+          })
   }
 
     render() {
         return (
             <div>
                 <h2>GooseyNew</h2>
+                {!this.state.formIsValid && (
+                  <div>Form data is not valid</div>
+                )}
               <Form>
               <FormGroup>
                 <Label for="location_name">Location Name</Label>

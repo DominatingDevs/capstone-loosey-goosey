@@ -11,53 +11,7 @@ import NotFound from "./pages/NotFound";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      listings: [],
-    };
-  }
-
-  componentDidMount() {
-    this.readListing();
-  }
-
-  readListing = () => {
-    fetch("/listings")
-      .then((response) => {
-        return response.json();
-      })
-      .then((payload) => {
-        this.setState({ listings: payload });
-      })
-      .catch((errors) => {
-        console.log("Gooseys read errors:", errors);
-      });
-  };
-
-  createNewListing = (newListing) => {
-    fetch("/listings", {
-      body: JSON.stringify(newListing),
-      headers: {
-        "Content-Type": "application/json"
-      },
-      method: "POST"
-    })
-    .then(response => {
-      if(response.status === 422){
-        alert("There is something wrong with your submission.")
-      }
-      return response.json()
-    })
-    .then(() => {
-      this.indexListing()
-    })
-    .catch(errors => {
-      console.log("create errors:", errors)
-    })
-  }
-
-
+ 
   render() {
     const {
       logged_in,
@@ -66,7 +20,6 @@ class App extends Component {
       sign_out_route,
       sign_up_route,
     } = this.props;
-    const { listings } = this.state;
 
     return (
       <Router>
@@ -84,9 +37,9 @@ class App extends Component {
           <Route path="/gooseyedit" component={GooseyEdit} />
           <Route
             path="/gooseyindex"
-            render={(props) => <GooseyIndex listings={this.state.listings} />}
+          component={GooseyIndex}
           />
-          <Route path="/gooseynew" component={GooseyNew} />
+          <Route path="/gooseynew" component={GooseyNew} current_user={current_user}/>
           <Route
             path="/gooseyshow/:id"
             render={(props) => {
