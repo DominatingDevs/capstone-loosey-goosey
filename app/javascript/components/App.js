@@ -35,6 +35,29 @@ class App extends Component {
       });
   };
 
+  createNewListing = (newListing) => {
+    fetch("/listings", {
+      body: JSON.stringify(newListing),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("There is something wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(() => {
+      this.indexListing()
+    })
+    .catch(errors => {
+      console.log("create errors:", errors)
+    })
+  }
+
+
   render() {
     const {
       logged_in,
