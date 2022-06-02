@@ -10,8 +10,8 @@ export default class GooseyNew extends Component {
           newListing: {
             location_name: "",
             location_category: "",
-            happy_hours: "",
             specials: "",
+            happy_hours: "",
             location_image: "",
             user_id: this.props.current_user_id,
           },
@@ -27,8 +27,6 @@ export default class GooseyNew extends Component {
       }
 
       handleSubmit = (e) => {
-          console.log("***",this.props.newListing)
-          console.log("$$$",this.state.newListing)
           fetch("/listings", {
             body: JSON.stringify(this.state.newListing),
             headers: {

@@ -8,6 +8,7 @@ import GooseyShow from "./pages/GooseyShow";
 import GooseyNew from "./pages/GooseyNew";
 import GooseyEdit from "./pages/GooseyEdit";
 import NotFound from "./pages/NotFound";
+import MyGooseyList from "./pages/MyGooseyList";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
@@ -33,15 +34,18 @@ class App extends Component {
             {" "}
             <Home />{" "}
           </Route>
+
           <Route path="/aboutus" component={AboutUs} />
+
           <Route path="/gooseyedit" component={GooseyEdit} />
-          <Route
-            path="/gooseyindex"
-          component={GooseyIndex}
-          />
+
+
+
+          <Route path="/gooseyindex" component={GooseyIndex}/>
+
           <Route path="/gooseynew" component={GooseyNew} current_user={current_user}/>
-          <Route
-            path="/gooseyshow/:id"
+
+          {/* <Route path="/gooseyshow/:id"
             render={(props) => {
               let id = props.match.params.id;
               let listing = this.state.listings.find(
@@ -49,7 +53,21 @@ class App extends Component {
               );
               return <GooseyShow listing={listing} />;
             }}
-          />
+          /> */}
+
+           <Route path="/mygooseylist" component={MyGooseyList} current_user={current_user}/>
+
+
+           <Route
+            path="/mygooseylist/:id"
+              render={ (props) => {
+                let id = props.match.params.id;
+              let listing = this.state.listings.find(
+                (listing) => listing.id === +id
+              );
+              return <MyGooseyList listing={listing} />;
+            }}
+            />
           <Route component={NotFound} />
         </Switch>
         <Footer />

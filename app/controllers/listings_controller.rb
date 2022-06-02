@@ -1,6 +1,13 @@
 class ListingsController < ApplicationController
     def index
+      listings_for_me = params["me"]
+
+      if listings_for_me == "true"
+       listings = current_user.listings
+      else 
         listings = Listing.all
+      end
+
         render json: listings
     end
 
@@ -12,6 +19,22 @@ class ListingsController < ApplicationController
         else
           render json: listing.errors, status: :unprocessable_entity
         end
+    end
+
+    def update
+      listing = current_user.listings.find(params[:id])
+      listing.update(listing_params)
+      if listing.save
+        render json: listing
+      else
+        render json: listing.errors, status: :unprocessable_entity
+      end
+    end
+  
+    def destroy
+      listing = current_user.listings.find(params[:id])
+      listing.destroy
+      render json: listing
     end
 
     private
