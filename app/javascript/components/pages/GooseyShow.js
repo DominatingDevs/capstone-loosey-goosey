@@ -8,9 +8,11 @@ export default class GooseyShow extends Component {
                 <h2>Goosey Show</h2>
                 {this.props.listing &&
                   <div>
-                <p> {this.props.listing.dishname}</p>
-                <p> {this.props.listing.genre}</p>
-                <p> {this.props.listing.category}</p>
+                <p> {this.props.listing.location_name}</p>
+                <p> {this.props.listing.location_category}</p>
+                <p> {this.props.listing.happy_hours}</p>
+                <p> {this.props.listing.specials}</p>
+                <p> {this.props.listing.location_image}</p>
                 <img src={this.props.listing.image} width="200" height="200" />
                   <NavLink to={`/listingedit/${this.props.listing.id}`}>
                     <Button>Edit Listing Profile</Button>
