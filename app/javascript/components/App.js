@@ -12,7 +12,32 @@ import MyGooseyList from "./pages/MyGooseyList";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
- 
+
+  constructor(props){
+    super(props)
+    this.state = {
+      listings: []
+    }
+  }
+
+  componentDidMount() {
+    this.readListing();
+  }
+
+  readListing = () => {
+    fetch("/listings")
+      .then((response) => {
+        return response.json();
+      })
+      .then((payload) => {
+        this.setState({ listings: payload });
+      })
+      .catch((errors) => {
+        console.log("Gooseys read errors:", errors);
+      });
+  };
+
+
   render() {
     const {
       logged_in,
@@ -37,7 +62,6 @@ class App extends Component {
 
           <Route path="/aboutus" component={AboutUs} />
           
-          <Route path="/gooseyedit" component={GooseyEdit} current_user={current_user}/>
           
           <Route
             path="/gooseyedit/:id"
@@ -46,7 +70,7 @@ class App extends Component {
               let listing = this.state.listings.find(
                 (listing) => listing.id === +id
               );
-              return <MyGooseyList listing={listing} />;
+              return <GooseyEdit listing={listing} />;
             }}
             />
 

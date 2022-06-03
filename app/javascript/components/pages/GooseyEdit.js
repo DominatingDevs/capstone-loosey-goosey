@@ -24,18 +24,18 @@ export default class GooseyEdit extends Component {
 
       handleChange = (e) => {
         const { editListing } = this.state
-        newListing[e.target.name] =e.target.value
+        editListing[e.target.name] =e.target.value
         this.setState ({editListing: editListing})
       }
 
 
-      handleSubmit = (e) => {
-        fetch("/listings", {
+      handleSubmit = () => {
+        fetch(`/listings/${this.props.listing.id}`, {
           body: JSON.stringify(this.state.editListing),
           headers: {
             "Content-Type": "application/json"
           },
-          method: "POST"
+          method: "PATCH"
         })
         .then(response => {
           if(response.status === 200){
@@ -53,6 +53,8 @@ export default class GooseyEdit extends Component {
 
     
     render() {
+      console.log(this.props)
+      console.log(this.state)
         return (
             // 
     
@@ -116,7 +118,7 @@ export default class GooseyEdit extends Component {
                 </Form>
               </div>
             </div>
-            {this.state.submitted && <Redirect to={`/mygooseylist/:id ${this.state.listing.id}`} />}
+            {this.state.submitted && <Redirect to={`/mygooseylist/:id ${this.props.listing.id}`} />}
           </>
         )
       }

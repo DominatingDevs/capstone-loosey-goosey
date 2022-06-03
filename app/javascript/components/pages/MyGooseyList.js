@@ -11,9 +11,10 @@ export default class MyGooseyList extends Component {
       myListings: [],
       id: 1,
       user_id: this.props.current_user_id,
-    },
-    submitted: false, 
-    formIsValid: true
+      submitted: false, 
+      formIsValid: true
+    };
+ 
   }
   
   componentDidMount() {
@@ -84,9 +85,11 @@ export default class MyGooseyList extends Component {
                     <img src={listing.location_image} width="200" height="200" />
                     <p className="my-card-button">                  
 
-                  <EditGooseyButton listing_id={this.state.myListings.id} />
+                    <NavLink to={`/gooseyedit/${listing.id}`}>
+                     <Button>Edit Listing </Button>
+                   </NavLink>
 
-                  <DeleteGooseyButton listing_id={this.state.myListings.id} />
+                  <DeleteGooseyButton listing_id={listing.id} />
                   </p>
             </div>
           </Col>
