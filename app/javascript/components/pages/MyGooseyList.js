@@ -2,15 +2,20 @@ import React, { Component } from 'react'
 import { Button, Col, Row } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 import DeleteGooseyButton from '../components/DeleteGooseyButton';
+import EditGooseyButton from '../components/EditGooseyButton';
 
 export default class MyGooseyList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       myListings: [],
-    };
+      id: 1,
+      user_id: this.props.current_user_id,
+    },
+    submitted: false, 
+    formIsValid: true
   }
-
+  
   componentDidMount() {
     this.readListing();
   }
@@ -28,6 +33,33 @@ export default class MyGooseyList extends Component {
       });
   };
 
+  handleChange = (e) => {
+    const { myListing } = this.state
+    newListing[e.target.name] =e.target.value
+    this.setState ({editListing: editListing})
+  }
+
+
+  handleSubmit = (e) => {
+    fetch("/listings", {
+      body: JSON.stringify(this.state.myListing),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+    .then(response => {
+      if(response.status === 200){
+        this.setState ({submitted: true})
+      } else if(response.status === 422)  {
+        this.setState ({formIsValid: false}) 
+      }
+      return response
+    })
+    .catch(errors => {
+      console.log("create errors:", errors)
+    })
+}
         
   render() {
     return (
@@ -50,12 +82,11 @@ export default class MyGooseyList extends Component {
                     <h5>{ listing.happy_hours }</h5>
                     <br />
                     <img src={listing.location_image} width="200" height="200" />
-                    <p className="my-card-button">
-                   <NavLink to={`/listingedit/${listing.id}`}>
-                     <Button>Edit Listing </Button>
-                   </NavLink>
+                    <p className="my-card-button">                  
 
-                  <DeleteGooseyButton listing_id={listing.id} />
+                  <EditGooseyButton listing_id={this.state.myListings.id} />
+
+                  <DeleteGooseyButton listing_id={this.state.myListings.id} />
                   </p>
             </div>
           </Col>

@@ -107,9 +107,12 @@ export default class GooseyEdit extends Component {
                     />
                   </FormGroup>
 
-                  <EditGooseyButton listing_id={this.state.editListing.id} />
-
-                  <DeleteGooseyButton listing_id={this.state.editListing.id} />
+                  <Button
+                    name="submit"
+                    onClick={this.handleSubmit}
+                  >
+                    Submit
+                  </Button>
                 </Form>
               </div>
             </div>

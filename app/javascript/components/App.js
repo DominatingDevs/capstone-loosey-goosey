@@ -36,9 +36,19 @@ class App extends Component {
           </Route>
 
           <Route path="/aboutus" component={AboutUs} />
-
-          <Route path="/gooseyedit" component={GooseyEdit} />
-
+          
+          <Route path="/gooseyedit" component={GooseyEdit} current_user={current_user}/>
+          
+          <Route
+            path="/gooseyedit/:id"
+              render={ (props) => {
+                let id = props.match.params.id;
+              let listing = this.state.listings.find(
+                (listing) => listing.id === +id
+              );
+              return <MyGooseyList listing={listing} />;
+            }}
+            />
 
 
           <Route path="/gooseyindex" component={GooseyIndex}/>
