@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Helmet } from "react-helmet"
 import { Nav, NavItem } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
-import logo from '../assets/logo.png'
+// import logo from '../assets/logo.png'
 
 class Header extends Component {
     render() {
