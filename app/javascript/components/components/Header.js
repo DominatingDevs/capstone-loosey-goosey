@@ -30,12 +30,7 @@ class Header extends Component {
 
                  <NavLink to="/"> </NavLink>
                      <Nav>
-                         {/* <NavItem>
-                            <NavLink to="/">Home 
-                            
-                            
-                            </NavLink>
-                        </NavItem> */}
+                    
                         <NavItem>
                              <NavLink to="/gooseyindex">View All </NavLink>
                         </NavItem>

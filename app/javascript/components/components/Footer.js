@@ -10,6 +10,6 @@ export default class Footer extends Component {
             Copyright © Dominating Devs. All Rights Reserved.
             </div>
            </div>
-        )
-}
+          )
+        }
     }
