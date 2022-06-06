@@ -31,6 +31,9 @@ export default class GooseyIndex extends Component {
   render() {
     return (
       <>
+        
+
+
 <Row className="cards">
 {this.state.listings.map((listing) => {
   return (
@@ -46,9 +49,11 @@ export default class GooseyIndex extends Component {
 </div>
 </div>
 </Col>
+
 );
 })}
 </Row>
+
 </>
 );
 }

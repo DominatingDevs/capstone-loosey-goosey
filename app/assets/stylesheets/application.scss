@@ -192,19 +192,18 @@ body {
     background: rgb(0, 0, 0);
   }
   .cards{
-    margin: 0%; 
-    float:none; 
-    margin-bottom: 10px; 
-    width:fit-content;
-    height:auto;
+    margin-left: 32%;
+    margin-right: auto;
+    // float:none; 
+     width:max-content;
+    // height:auto;
     justify-content:center;
-    width:auto;
     text-align: center;
     color: #000000;
-    padding:7px 16px;
+    // padding:7px 16px;
     font-size:13px;
     font-weight:500px;
-    display:inline-block;
+     display:inline-block;
     align-items:center;
   }
   .scrollable{
