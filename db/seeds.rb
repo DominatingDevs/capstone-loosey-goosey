@@ -32,6 +32,13 @@ listings = [
   ]
 
   listings.each do |each_listing|
-    user.listings.create each_listing
+    # user.listings.create each_listing
+    Listing.where(location_name: each_listing[:location_name]).first_or_create(
+       location_category: each_listing[:location_category],
+        happy_hours: each_listing[:happy_hours], 
+        specials: each_listing[:specials], 
+        location_image: each_listing[:location_image], 
+        user: user
+    )
     puts "creating listing #{each_listing}"
   end

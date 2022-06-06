@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardTitle, Col, Row } from "reactstrap";
+import { Card, CardTitle, Col, ListGroupItemHeading, Row } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
 export default class GooseyIndex extends Component {
@@ -34,25 +34,21 @@ export default class GooseyIndex extends Component {
         
 
 
-<Row className="cards">
-{this.state.listings.map((listing) => {
-  return (
-    <Col sm="4" key={listing.id}>
-<div className="card">
-<img className="card-img-top" src={listing.location_image}/> 
-<div className="card-body">
-<p className="card-header">{listing.location_name}</p>
-<p className="card-text">{listing.specials}</p>
-<p className="card-text">{listing.location_category}</p>
-<p className="my-card-button">                  
-</p>
-</div>
-</div>
-</Col>
-
-);
-})}
-</Row>
+  <div className="cards">
+    {this.state.listings.map((listing) => {
+      return (
+        <div className="card" key ={listing.id}>
+          <h2 className="card-header">{listing.location_name}</h2>
+          <img className="card-img-top" src={listing.location_image}/> 
+          <div className="card-body">
+            <p className="card-text">{listing.specials}</p>
+            <p className="card-text">{listing.location_category}</p>
+            <p className="card-text">{listing.happy_hours}</p>
+          </div>
+        </div>
+      );
+    })}
+  </div>
 
 </>
 );

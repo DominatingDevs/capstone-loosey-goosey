@@ -63,30 +63,28 @@ export default class MyGooseyList extends Component {
   render() {
     return (
       <>
-       <Row className="cards">
-      {this.state.myListings.map((listing) => {
+   <div className="cards">
+    {this.state.myListings.map((listing) => {
       return (
-     <Col sm="4" key={listing.id}>
-      <div className="card">
-      <img className="card-img-top" src={listing.location_image}/> 
-      <div className="card-body">
-      <p className="card-header">{listing.location_name}</p>
-      <p className="card-text">{listing.specials}</p>
-      <p className="card-text">{listing.location_category}</p>               
-                  <p className="my-card-button">
-                    <NavLink to={`/gooseyedit/${listing.id}`}>
-                      <Button>Edit Listing </Button>
-                    </NavLink>
+        <div className="card" key ={listing.id}>
+          <h2 className="card-header">{listing.location_name}</h2>
+          <img className="card-img-top" src={listing.location_image}/> 
+          <div className="card-body">
+            <p className="card-text">{listing.specials}</p>
+            <p className="card-text">{listing.location_category}</p>
+            <p className="card-text">{listing.happy_hours}</p>
+            <NavLink to={`/gooseyedit/${listing.id}`}>
+            <Button>Edit Listing </Button>
+            </NavLink>
 
-                    <DeleteGooseyButton listing_id={listing.id} />
-                  </p>
-                </div>
-                </div>
-              </Col>
-            );
-          })}
-        </Row>
-      </>
-    );
+            <DeleteGooseyButton listing_id={listing.id} />
+          </div>
+        </div>
+       );
+     })}
+    </div>
+  </>
+  );
   }
 }
+
