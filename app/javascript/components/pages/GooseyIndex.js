@@ -4,36 +4,16 @@ import { NavLink } from "react-router-dom";
 
 export default class GooseyIndex extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      listings: [],
-    };
-  }
 
-  componentDidMount() {
-    this.readListing();
-  }
 
-  readListing = () => {
-    fetch("/listings")
-      .then((response) => {
-        return response.json();
-      })
-      .then((payload) => {
-        this.setState({ listings: payload });
-      })
-      .catch((errors) => {
-        console.log("Gooseys read errors:", errors);
-      });
-  };
+
 
   render() {
     return (
       <>
         <h3>All the Listings</h3>
         <Row className="cards">
-          {this.state.listings.map((listing) => {
+          {this.props.listings.map((listing) => {
             return (
               <Col sm="4" key={listing.id}>
                 <Card body>

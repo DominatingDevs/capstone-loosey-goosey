@@ -43,7 +43,7 @@ class Header extends Component {
 
                         <>
                             <NavItem>
-                                <NavLink to="/gooseyshow">My Gooseys</NavLink>
+                                <NavLink to="/mygooseylist">My Gooseys</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink to="/gooseynew">Add Goosey</NavLink>
