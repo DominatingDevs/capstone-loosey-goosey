@@ -31,28 +31,28 @@ export default class GooseyIndex extends Component {
   render() {
     return (
       <>
-        <h3>All the Listings</h3>
-        <Row className="cards">
-          {this.state.listings.map((listing) => {
-            return (
-              <Col sm="4" key={listing.id}>
-                <Card body>
-                  <CardTitle>
-                    <h5>{listing.location_name}</h5>
-                    <h5>
-                      {listing.specials}, {listing.happy_hours}{" "}
-                      {listing.location_category}, {listing.location_image},
-                    </h5>
-                    <p className="card-button">
-                      <NavLink to={`/listing/${listing.id}`}></NavLink>
-                    </p>
-                  </CardTitle>
-                </Card>
-              </Col>
-            );
-          })}
-        </Row>
-      </>
-    );
-  }
+        
+
+
+<Row className="cards">
+{this.state.listings.map((listing) => {
+  return (
+    <Col sm="4" key={listing.id}>
+<div className="card">
+<img className="card-img-top" src={listing.location_image}/> 
+<div className="card-body">
+<p className="card-header">{listing.location_name}</p>
+<p className="card-text">{listing.specials}</p>
+<p className="card-text">{listing.location_category}</p>
+<p className="my-card-button">                  
+</p>
+</div>
+</div>
+</Col>
+);
+})}
+</Row>
+</>
+);
+}
 }

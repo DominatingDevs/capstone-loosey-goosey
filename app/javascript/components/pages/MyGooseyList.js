@@ -11,9 +11,10 @@ export default class MyGooseyList extends Component {
       myListings: [],
       id: 1,
       user_id: this.props.current_user_id,
-    },
-    submitted: false, 
-    formIsValid: true
+      submitted: false, 
+      formIsValid: true
+    }
+
   }
   
   componentDidMount() {
@@ -64,8 +65,8 @@ export default class MyGooseyList extends Component {
   render() {
     return (
         <>
-        <h3>My Listings</h3>
-        <Row className="cards">
+        
+        {/* <Row className="cards">
             { this.state.myListings.map(listing => {
               return (
                 <Col sm="4" key={ listing.id }>
@@ -96,6 +97,33 @@ export default class MyGooseyList extends Component {
         </>
       )
     }
-}
+} */}
     
   
+<Row className="cards">
+{this.state.myListings.map((listing) => {
+  return (
+    <Col sm="4" key={listing.id}>
+<div className="card">
+<img className="card-img-top" src={listing.location_image}/> 
+<div className="card-body">
+<p className="card-header">{listing.location_name}</p>
+<p className="card-text">{listing.specials}</p>
+<p className="card-text">{listing.location_category}</p>
+<p className="my-card-button">                  
+
+<EditGooseyButton listing_id={this.state.myListings.id} />
+
+<DeleteGooseyButton listing_id={this.state.myListings.id} />
+</p>
+</div>
+</div>
+</Col>
+);
+})}
+</Row>
+</>
+);
+}
+}
+

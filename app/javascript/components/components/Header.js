@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { Helmet } from "react-helmet"
 import { Nav, NavItem } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
-// import logo from '../assets/logo.png'
+import homebutton from '../assets/homebutton.png'
+
+
 
 class Header extends Component {
     render() {
@@ -16,60 +18,71 @@ class Header extends Component {
         return (
 
 
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a className="navbar-brand" href="/"></a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+            
 
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-
-                        </li>
-                    </ul>
-                </div>
+<>
 
 
-                <div className="header-main">
-                    <NavLink to="/"> </NavLink>
-                    <Nav>
+     
+     
+   
+<div class="logonav">
+<a id='short' href="/"><img className="homebutton" src={homebutton} scale="0"></img></a> 
+</div>
+
+     <div className="listview-title mt-2"> 
+
+                 <NavLink to="/"> </NavLink>
+                     <Nav>
+                         {/* <NavItem>
+                            <NavLink to="/">Home 
+                            
+                            
+                            </NavLink>
+                        </NavItem> */}
                         <NavItem>
-                            <NavLink to="/">Home</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink to="/gooseyindex">All the Gooseys</NavLink>
+                             <NavLink to="/gooseyindex">View All </NavLink>
                         </NavItem>
 
                         <>
-                            <NavItem>
-                                <NavLink to="/mygooseylist">My Gooseys</NavLink>
+                          <NavItem>
+                             <NavLink to="/mygooseylist">My Listings</NavLink>
+                          </NavItem>
+                          <NavItem>
+                              <NavLink to="/gooseynew">Add A Listing</NavLink>
+                          </NavItem>
+                          <NavItem>
+                              <NavLink to="/aboutus">About Us</NavLink>
+                          </NavItem>
+                          <NavItem>
+                              <a href={sign_out_route}>Sign Out</a>
                             </NavItem>
-                            <NavItem>
-                                <NavLink to="/gooseynew">Add Goosey</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink to="/aboutus">About Us</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <a href={sign_out_route}>Sign Out</a>
-                            </NavItem>
-                        </>
+                         </>
 
-                        {!logged_in &&
+                          {!logged_in &&
 
                             <NavItem>
                                 <a href={sign_in_route}>Sign In</a>
                             </NavItem>
                         }
+                        
                     </Nav>
-                </div>
-            </nav>
+                    
+                    </div>  
+                </>
+                
+    
+            
 
 
-        )
+
+        )}
     }
-}
+
+
+
+
+
 
 
 export default Header

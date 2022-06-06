@@ -1,4 +1,10 @@
-<h2>Forgot your password?</h2>
+
+<a href="page-login.html" class="field">
+<div class="icon-box bg-primary">
+    <ion-icon name="lock-closed-outline"></ion-icon>
+</div>
+</a>
+
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -9,7 +15,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit "Reset Password" %>
   </div>
 <% end %>
 

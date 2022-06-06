@@ -4,7 +4,10 @@ export default class GooseyShow extends Component {
     render() {
         
         return (
-            <div>
+            
+
+    
+                <div>
                  <h2> Listings</h2>
                 {this.props.listing &&
                   <div>

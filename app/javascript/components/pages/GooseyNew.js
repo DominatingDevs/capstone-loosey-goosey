@@ -49,8 +49,9 @@ export default class GooseyNew extends Component {
 
     render() {
         return (
-            <div>
-                <h2>GooseyNew</h2>
+          
+            <div className="new-form">
+                
                 {!this.state.formIsValid && (
                   <div>Form data is not valid</div>
                 )}
@@ -100,10 +101,11 @@ export default class GooseyNew extends Component {
                   onChange={this.handleChange}
                 />
               </FormGroup>
-              <Button
+              <div className="button"><Button
                onClick={this.handleSubmit} >
                    Add a Goosey
                    </Button>
+                   </div>
             </Form>
 { this.state.submitted && <Redirect to="/gooseyindex" />}
             </div>

@@ -1,5 +1,12 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
+<a href="page-login.html" class="field">
+<div class="icon-box bg-primary">
+    <ion-icon name="lock-closed-outline"></ion-icon>
+</div>
+</a>
+
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
