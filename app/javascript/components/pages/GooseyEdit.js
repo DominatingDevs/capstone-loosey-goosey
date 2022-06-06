@@ -34,10 +34,7 @@ export default class GooseyEdit extends Component {
 
   render() {
     return (
-      //
-
       <>
-      
         <div className="form-container">
           <div className="form">
             <Form>
@@ -98,11 +95,3 @@ export default class GooseyEdit extends Component {
     );
   }
 }
-
-//
-//             <div>
-//                 <h2>GooseyEdit</h2>
-//             </div>
-//         )
-//     }
-// }

@@ -81,10 +81,10 @@ export default class MyGooseyList extends Component {
           </div>
         </div>
        );
-     })}
+      })}
     </div>
-  </>
-  );
+    </>
+    );
   }
 }
 

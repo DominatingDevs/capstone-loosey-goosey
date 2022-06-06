@@ -16,26 +16,18 @@ class Header extends Component {
             sign_out_route
         } = this.props
         return (
-
-
-            
-
-<>
-   
-<div class="logonav">
+    <>
+    <div class="logonav">
 <a id='short' href="/"><img className="homebutton" src={homebutton} scale="0"></img></a> 
-</div>
-
-     <div className="listview-title mt-2"> 
+     </div>
+        <div className="listview-title mt-2"> 
 
                  <NavLink to="/"> </NavLink>
                      <Nav>
-                    
                         <NavItem>
                              <NavLink to="/gooseyindex">View All </NavLink>
                         </NavItem>
-
-                        <>
+                            <>
                           <NavItem>
                              <NavLink to="/mygooseylist">My Listings</NavLink>
                           </NavItem>
@@ -49,26 +41,16 @@ class Header extends Component {
                               <a href={sign_out_route}>Sign Out</a>
                             </NavItem>
                          </>
-
                           {!logged_in &&
-
                             <NavItem>
                                 <a href={sign_in_route}>Sign In</a>
                             </NavItem>
-                        }
-                        
-                    </Nav>
-                    
-                    </div>  
-                </>
-                
-    
-            
-
-
-
-        )}
-    }
+                            }
+                        </Nav>
+                     </div>  
+                    </>
+                )}
+            }
 
 
 

@@ -31,9 +31,6 @@ export default class GooseyIndex extends Component {
   render() {
     return (
       <>
-        
-
-
   <div className="cards">
     {this.state.listings.map((listing) => {
       return (
