@@ -8,11 +8,9 @@ export default class Home extends Component {
   render() {
     return (
 
-
-
-
-<img className="logo" src={logo}
-></img>
-    )
+<div className="homenav"> 
+  <a id='short' href="/gooseyindex"><img className="logo" src={logo} scale="0"></img></a> 
+  </div>
+      )
     }
   }

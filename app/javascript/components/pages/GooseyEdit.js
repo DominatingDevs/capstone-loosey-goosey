@@ -37,7 +37,7 @@ export default class GooseyEdit extends Component {
       //
 
       <>
-        <h3>Edit Listing</h3>
+      
         <div className="form-container">
           <div className="form">
             <Form>
