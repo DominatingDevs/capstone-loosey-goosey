@@ -26,20 +26,20 @@ class Header extends Component {
                         <NavItem>
                             <NavLink to="/gooseyindex">View All </NavLink>
                         </NavItem>
-                        <>
-                            <NavItem>
-                                <NavLink to="/mygooseylist">My Listings</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink to="/gooseynew">Add A Listing</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink to="/aboutus">About Us</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <a href={sign_out_route}>Sign Out</a>
-                            </NavItem>
-                        </>
+
+                        <NavItem>
+                            <NavLink to="/mygooseylist">My Listings</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink to="/gooseynew">Add A Listing</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink to="/aboutus">About Us</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <a href={sign_out_route}>Sign Out</a>
+                        </NavItem>
+
                         {!logged_in &&
                             <NavItem>
                                 <a href={sign_in_route}>Sign In</a>
