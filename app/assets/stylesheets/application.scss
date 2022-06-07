@@ -1,9 +1,11 @@
 @import 'bootstrap';
 
-$font-stack: Helvetica,
-sans-serif;
-$primary-color: #6c63ff;
+@import url('https://fonts.googleapis.com/css2?family=Smooch&display=swap');
 
+
+
+$font-stack:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+$primary-color: #6c63ff;
 
 
 
@@ -19,6 +21,7 @@ $primary-color: #6c63ff;
 
 .listview-title {
   ul {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     max-width: 60%;
     margin: 0 auto;
     text-align: center;
@@ -31,17 +34,20 @@ $primary-color: #6c63ff;
   }
 
   li {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display:inline-block;
-  max-width: 60%;
-  margin: 0 auto;
-  text-align: center;
-  font-size:13px;
-  font-weight:500px;
+    max-width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    font-size:30px;
+    font-weight:500px;
   }
   a {
     display: flex;
     padding: 6px 12px;
     text-decoration: none;
+    color: #ffffff;
+    font-size: 13px;
 
   }
 
@@ -209,23 +215,36 @@ body {
 
 
 .cards {
-  max-width: 60%;
+  max-width: 40%;
   margin: 0 auto;
   text-align: center;
-  font-size: 13px;
   font-weight: 500px;
 }
 
 
 .card {
+  font-family: 'Smooch', cursive;
+  font-size: 60px;
+  letter-spacing: 2px;
   padding-bottom: 24px;
   border-radius: 0%;
   border: none;
   background-color: #000000;
-  color: #ffffff;
+  color: #ff4ed3;
+  text-shadow: 5px 5px 20px #ffffff;
   margin-top: 24px;
-  border-bottom: 1px solid #ff00c8;
+  border-bottom: 1px solid #2a13c6;
 }
+
+.card-text{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ffffff;
+  text-shadow:none;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+
 
 
 .scrollable {
