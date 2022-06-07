@@ -31,23 +31,22 @@ export default class GooseyIndex extends Component {
   render() {
     return (
       <>
-  <div className="cards">
-    {this.state.listings.map((listing) => {
-      return (
-        <div className="card" key ={listing.id}>
-          <h2 className="card-header">{listing.location_name}</h2>
-          <img className="card-img-top" src={listing.location_image}/> 
-          <div className="card-body">
-            <p className="card-text">{listing.specials}</p>
-            <p className="card-text">{listing.location_category}</p>
-            <p className="card-text">{listing.happy_hours}</p>
-          </div>
+        <div className="cards">
+          {this.state.listings.map((listing) => {
+            return (
+              <div className="card" key={listing.id}>
+                <h2 className="card-header">{listing.location_name}</h2>
+                <img className="card-img-top" src={listing.location_image} />
+                <div className="card-body">
+                  <p className="card-text">{listing.specials}</p>
+                  <p className="card-text">{listing.location_category}</p>
+                  <p className="card-text">{listing.happy_hours}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
-      );
-    })}
-  </div>
-
-</>
-);
-}
+      </>
+    );
+  }
 }
