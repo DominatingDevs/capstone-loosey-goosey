@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Helmet } from "react-helmet"
 import { Nav, NavItem } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 import homebutton from '../assets/homebutton.png'
