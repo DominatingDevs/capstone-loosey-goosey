@@ -32,7 +32,7 @@ export default class GooseyIndex extends Component {
     return (
       <>
         <div className="cards">
-          {this.state.listings.map((listing) => {
+          {this.state.listings && this.state.listings.map((listing) => {
             return (
               <div className="card" key={listing.id}>
                 <h2 className="card-header">{listing.location_name}</h2>
