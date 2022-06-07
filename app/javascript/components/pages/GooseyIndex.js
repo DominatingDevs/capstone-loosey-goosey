@@ -7,30 +7,14 @@ export default class GooseyIndex extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      listings: [],
+      listings: props.listings,
     };
   }
-
-  componentDidMount() {
-    this.readListing();
-  }
-
-  readListing = () => {
-    fetch("/listings")
-      .then((response) => {
-        return response.json();
-      })
-      .then((payload) => {
-        this.setState({ listings: payload });
-      })
-      .catch((errors) => {
-        console.log("Gooseys read errors:", errors);
-      });
-  };
 
   render() {
     return (
       <>
+      <h3>All the Listings</h3>
         <div className="cards">
           {this.state.listings && this.state.listings.map((listing) => {
             return (

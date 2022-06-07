@@ -16,7 +16,8 @@ Enzyme.configure({ adapter: new Adapter() })
 describe("When GooseyEdit renders", () => {
   it("displays a heading", () => {
     const gooseyEdit = shallow(<GooseyEdit />)
-    const gooseyEditHeading = gooseyEdit.find("h3")
-    expect(gooseyEditHeading.text()).toEqual("Edit Listing")
+    const gooseyEditHeading = gooseyEdit.find("Label")
+    expect(gooseyEditHeading.text()).toEqual(4)
   })
 })
+

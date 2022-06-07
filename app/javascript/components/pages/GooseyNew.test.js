@@ -16,7 +16,24 @@ Enzyme.configure({ adapter: new Adapter() })
 describe("When GooseyNew renders", () => {
   it("displays a heading", () => {
     const gooseyEdit = shallow(<GooseyNew />)
-    const gooseyEditHeading = gooseyEdit.find("h2")
+    const gooseyEditHeading = gooseyEdit.find("nav")
     expect(gooseyEditHeading.text()).toEqual("GooseyNew")
   })
 })
+
+describe("When NotFound renders", () => {
+    it("displays a heading", () => {
+      const gooseyEdit = shallow(<NotFound />)
+      const gooseyEditHeading = gooseyEdit.find("h2")
+      expect(gooseyEditHeading.text()).toEqual("NotFound")
+    })
+  })
+
+
+  describe("When Header renders", () => {
+    it("displays one nav", () => {
+      const header = shallow(<Header />)
+      const headerHeading = header.find("nav")
+      expect(headerHeading.text()).toEqual(1)
+    })
+  })

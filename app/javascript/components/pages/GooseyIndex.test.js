@@ -15,8 +15,9 @@ Enzyme.configure({ adapter: new Adapter() })
 
 describe("When GooseyIndex renders", () => {
   it("displays a heading", () => {
-    const gooseyEdit = shallow(<GooseyIndex />)
-    const gooseyEditHeading = gooseyEdit.find("h3")
-    expect(gooseyEditHeading.text()).toEqual("All the Listings")
+    const mockGoosey = [{id: 1, id:2}]
+    const wrapper = shallow(<GooseyIndex listings={mockGoosey} />);
+    console.log(wrapper.find('div.card'))
+    expect(wrapper.find('div.card')).to.have.lengthOf(0);
   })
 })
