@@ -94,6 +94,7 @@ class App extends Component {
                     current_user={current_user}
                     listing={listing}
                   />
+                  
                 );
               }}
             />

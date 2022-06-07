@@ -48,8 +48,7 @@ export default class GooseyNew extends Component {
 
   render() {
     return (
-      <div>
-        <h2>GooseyNew</h2>
+      <div className="new-form">
         {!this.state.formIsValid && <div>Form data is not valid</div>}
         <Form>
           <FormGroup>
