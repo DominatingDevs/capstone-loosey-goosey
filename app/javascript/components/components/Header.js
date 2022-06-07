@@ -16,7 +16,7 @@ class Header extends Component {
         } = this.props
         return (
             <>
-                <div class="logonav">
+                <div className="logonav">
                     <a id='short' href="/"><img className="homebutton" src={homebutton} scale="0"></img></a>
                 </div>
                 <div className="listview-title mt-2">

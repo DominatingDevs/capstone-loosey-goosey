@@ -113,8 +113,7 @@ class App extends Component {
 
           <Route
             path="/mygooseylist"
-            component={MyGooseyList}
-            current_user={current_user}
+            render={() => <MyGooseyList myListings={this.myListings} />}
           />
 
           <Route

@@ -11,8 +11,6 @@ export default class MyGooseyList extends Component {
       myListings: [],
       id: 1,
       user_id: this.props.current_user_id,
-      submitted: false,
-      formIsValid: true,
     };
   }
 
@@ -30,33 +28,6 @@ export default class MyGooseyList extends Component {
       })
       .catch((errors) => {
         console.log("Gooseys read errors:", errors);
-      });
-  };
-
-  handleChange = (e) => {
-    const { myListing } = this.state;
-    newListing[e.target.name] = e.target.value;
-    this.setState({ editListing: editListing });
-  };
-
-  handleSubmit = (e) => {
-    fetch("/listings", {
-      body: JSON.stringify(this.state.myListing),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "PATCH",
-    })
-      .then((response) => {
-        if (response.status === 200) {
-          this.setState({ submitted: true });
-        } else if (response.status === 422) {
-          this.setState({ formIsValid: false });
-        }
-        return response;
-      })
-      .catch((errors) => {
-        console.log("create errors:", errors);
       });
   };
 

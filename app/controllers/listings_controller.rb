@@ -2,8 +2,8 @@ class ListingsController < ApplicationController
     def index
       listings_for_me = params["me"]
 
-      if current_user && listings_for_me == "true"
-       listings = current_user.listings
+      if listings_for_me == "true"
+       listings = current_user&.listings || []
       else 
         listings = Listing.all
       end
